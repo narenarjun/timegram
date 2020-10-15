@@ -3,7 +3,7 @@ import { loadFilesSync } from "@graphql-tools/load-files";
 import path from "path";
 
 const resolvers = loadFilesSync(
-  path.join(__dirname, "../greetings/**/*.resolver.*")
+  path.join(__dirname, "../graphql/**/*.resolver.*")
 );
 
 const Resolversmerged = mergeResolvers(resolvers);

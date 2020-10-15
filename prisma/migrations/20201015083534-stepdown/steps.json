@@ -1,0 +1,30 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "following"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "followers"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "posts"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "likes"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "comments"
+    }
+  ]
+}

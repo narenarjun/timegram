@@ -15,7 +15,7 @@
     "heroku-postbuild": " prisma generate && babel src --out-dir dist --copy-files"
   },
   "devDependencies": {
-    "@prisma/cli": "^2.9.0",
+    "@prisma/cli": "2.9.0",
     "nodemon": "^2.0.5"
   },
   "dependencies": {
@@ -27,6 +27,7 @@
     "@babel/preset-env": "^7.11.5",
     "@graphql-tools/load-files": "^6.2.4",
     "@graphql-tools/merge": "^6.2.4",
+    "@prisma/client": "2.9.0",
     "apollo-server": "^2.18.2",
     "apollo-server-express": "^2.18.2",
     "env-cmd": "^10.1.0",
