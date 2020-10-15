@@ -8,6 +8,4 @@ const typesArray = loadFilesSync(
 
 const typedefmerged = mergeTypeDefs(typesArray);
 
-// console.log(`typedefs merged : ${JSON.stringify(typedefmerged, null, 2)}`);
-
 export default typedefmerged;
