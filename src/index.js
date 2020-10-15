@@ -2,30 +2,26 @@ import "@babel/polyfill/noConflict";
 
 import { ApolloServer } from "apollo-server-express";
 import express from "express";
+import logger from "morgan";
+import schemawithtypedefresolver from "./schema/index";
+import typedefmerged from "./api/mergedtypedefs/index";
+import Resolversmerged from "./api/mergedresolvers/index";
 
 const Port = process.env.PORT || 6000;
 const Path = process.env.GRAPHQLPATH
   ? `/${process.env.GRAPHQLPATH}`
   : "/graphql";
 
-const typeDefs = `
-    type Query{
-        hello: String!
-    }
-`;
-
-const resolvers = {
-  Query: {
-    hello: () => "Hi",
-  },
-};
-
 const app = express();
 
+// console.log(`merged schema: ${schemawithtypedefresolver}`);
+
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+  // schema: schemawithtypedefresolver,
+  typeDefs: typedefmerged,
+  resolvers: Resolversmerged,
 });
+// app.use(logger("dev"));
 
 server.applyMiddleware({ app, path: Path });
 
